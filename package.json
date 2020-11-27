@@ -1,5 +1,5 @@
 {
-  "name": "@micro-os-plus/devices-stm32f0-xpack",
+  "name": "@micro-os-plus/devices-stm32f0",
   "version": "0.1.0",
   "description": "A source xPack with complementary STM32F0 files",
   "main": "",
