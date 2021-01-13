@@ -31,6 +31,7 @@
  * `/Drivers/CMSIS/Device/ST/STM32F?xx/Source/Templates/arm`
  */
 
+// clang-format off
 // ----------------------------------------------------------------------------
 
 #include <micro-os-plus/architecture.h>
