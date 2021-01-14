@@ -151,7 +151,7 @@ handler_ptr_t _interrupt_vectors[] =
     PendSV_Handler,                    // The PendSV handler
     SysTick_Handler,                   // The SysTick handler
 
-    // ----------------------------------------------------------------------
+    // ------------------------------------------------------------------------
     // External Interrupts
     WWDG_IRQHandler,                // Window Watchdog
     PVD_VDDIO2_IRQHandler,          // PVD through EXTI Line detect

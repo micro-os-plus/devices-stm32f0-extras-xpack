@@ -161,7 +161,7 @@ handler_ptr_t _interrupt_vectors[] =
     PendSV_Handler,                    // The PendSV handler
     SysTick_Handler,                   // The SysTick handler
 
-    // ----------------------------------------------------------------------
+    // ------------------------------------------------------------------------
     // External Interrupts
     WWDG_IRQHandler,                // Window Watchdog
     VDDIO2_IRQHandler,              // VDDIO2 Monitor through EXTI Line 31
