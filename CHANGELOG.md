@@ -10,6 +10,7 @@ and close existing issues and pull requests.
 
 - rename as `devices-stm32f0-extras`
 
-## v1.1.0 (2021-02-04)
+## 2021-02-04
 
+- v1.1.0
 - content moved here form single repo
