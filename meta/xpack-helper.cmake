@@ -9,11 +9,11 @@
 #
 # -----------------------------------------------------------------------------
 
-message(STATUS "Including micro-os-plus-devices-stm32f0...")
+message(STATUS "Including micro-os-plus-devices-stm32f0-extras...")
 
 # -----------------------------------------------------------------------------
 
-function(target_sources_micro_os_plus_devices_stm32f0 target)
+function(target_sources_micro_os_plus_devices_stm32f0_extras target)
 
   get_filename_component(xpack_root_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
 
@@ -31,7 +31,7 @@ endfunction()
 
 # -----------------------------------------------------------------------------
 
-function(target_include_directories_micro_os_plus_devices_stm32f0 target)
+function(target_include_directories_micro_os_plus_devices_stm32f0_extras target)
 
   get_filename_component(xpack_root_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
 
