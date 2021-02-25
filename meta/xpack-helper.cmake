@@ -9,39 +9,78 @@
 #
 # -----------------------------------------------------------------------------
 
+if(micro-os-plus-devices-stm32f0-extras-included)
+  return()
+endif()
+
+set(micro-os-plus-devices-stm32f0-extras-included TRUE)
+
 message(STATUS "Including micro-os-plus-devices-stm32f0-extras...")
 
 # -----------------------------------------------------------------------------
+# Preprocessor symbols.
 
-function(target_sources_micro_os_plus_devices_stm32f0_extras target)
+# TODO: migrate to options.
+set(xpack_device_family_compile_definition "STM32F0")
+message(STATUS "${xpack_device_family_compile_definition}")
 
-  get_filename_component(xpack_root_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
+# This also requires xpack_device_compile_definition to be defined by the user.
+
+# -----------------------------------------------------------------------------
+# Dependencies.
+
+find_package(micro-os-plus-architecture-cortexm REQUIRED)
+
+# -----------------------------------------------------------------------------
+# The current folder.
+
+get_filename_component(xpack_current_folder ${CMAKE_CURRENT_LIST_DIR} DIRECTORY)
+
+# -----------------------------------------------------------------------------
+
+if(NOT TARGET micro-os-plus-devices-stm32f0-extras-interface)
+
+  add_library(micro-os-plus-devices-stm32f0-extras-interface INTERFACE EXCLUDE_FROM_ALL)
 
   # Hopefully the file names follow the symbol definitions.
   string(TOLOWER ${xpack_device_compile_definition} device_name)
 
+  # ---------------------------------------------------------------------------
+
   target_sources(
-    ${target}
+    micro-os-plus-devices-stm32f0-extras-interface
 
-    PRIVATE
-      ${xpack_root_folder}/src/vectors/vectors_${device_name}.c
+    INTERFACE
+      ${xpack_current_folder}/src/vectors/vectors_${device_name}.c
   )
-
-endfunction()
-
-# -----------------------------------------------------------------------------
-
-function(target_include_directories_micro_os_plus_devices_stm32f0_extras target)
-
-  get_filename_component(xpack_root_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
 
   target_include_directories(
-    ${target}
+    micro-os-plus-devices-stm32f0-extras-interface
 
-    PUBLIC
-      ${xpack_root_folder}/include
+    INTERFACE
+      ${xpack_current_folder}/include
   )
 
-endfunction()
+  target_compile_definitions(
+    micro-os-plus-devices-stm32f0-extras-interface
+
+    INTERFACE
+      "${xpack_device_family_compile_definition}"
+  )
+
+  target_link_libraries(
+    micro-os-plus-devices-stm32f0-extras-interface
+
+    INTERFACE
+      micro-os-plus::architecture-cortexm
+  )
+
+  # ---------------------------------------------------------------------------
+  # Aliases.
+
+  add_library(micro-os-plus::devices-stm32f0-extras ALIAS micro-os-plus-devices-stm32f0-extras-interface)
+  message(STATUS "micro-os-plus::devices-stm32f0-extras")
+
+endif()
 
 # -----------------------------------------------------------------------------
