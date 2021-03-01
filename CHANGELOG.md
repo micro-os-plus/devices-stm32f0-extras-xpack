@@ -6,6 +6,14 @@ Please check
 [GitHub](https://github.com/micro-os-plus/devices-stm32f0-extras-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2021-03-01
+
+- v2.0.0
+
+## 2021-02-28
+
+- rename micro_os_plus
+
 ## 2021-01-15
 
 - rename as `devices-stm32f0-extras`
