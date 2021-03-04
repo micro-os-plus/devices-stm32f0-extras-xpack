@@ -49,11 +49,17 @@ if(NOT TARGET micro-os-plus-devices-stm32f0-extras-interface)
 
   # ---------------------------------------------------------------------------
 
+  set(source_files
+    ${xpack_current_folder}/src/vectors/vectors_${device_name}.c
+  )
+
+  xpack_display_relative_paths("${source_files}" "${xpack_current_folder}")
+
   target_sources(
     micro-os-plus-devices-stm32f0-extras-interface
 
     INTERFACE
-      ${xpack_current_folder}/src/vectors/vectors_${device_name}.c
+      ${source_files}
   )
 
   target_include_directories(
