@@ -113,9 +113,13 @@ CEC_IRQHandler(void);
 extern uint32_t _initial_main_stack_pointer;
 
 typedef void
-(* const handler_ptr_t)(void);
+(*handler_ptr_t)(void);
 
 // ----------------------------------------------------------------------------
+
+#pragma GCC diagnostic push
+
+#pragma GCC diagnostic ignored "-Wpedantic"
 
 /**
  * The table of interrupt handlers. It has an explicit section name
@@ -189,6 +193,8 @@ handler_ptr_t _interrupt_vectors[] =
     0,                              // Reserved
     CEC_IRQHandler,                 // CEC
 };
+
+#pragma GCC diagnostic pop
 
 // ----------------------------------------------------------------------------
 
