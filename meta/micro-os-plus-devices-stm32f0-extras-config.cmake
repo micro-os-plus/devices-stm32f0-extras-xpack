@@ -70,12 +70,14 @@ if(NOT TARGET micro-os-plus-devices-stm32f0-extras-interface)
   )
 
   message(STATUS "+ ${xpack_device_family_compile_definition}")
+  message(STATUS "+ ${xpack_device_compile_definition}")
 
   target_compile_definitions(
     micro-os-plus-devices-stm32f0-extras-interface
 
     INTERFACE
       "${xpack_device_family_compile_definition}"
+      "${xpack_device_compile_definition}"
   )
 
   target_link_libraries(
