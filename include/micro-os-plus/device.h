@@ -38,7 +38,10 @@
 #if defined(__cplusplus)
 #pragma GCC diagnostic ignored "-Wuseless-cast"
 #pragma GCC diagnostic ignored "-Wold-style-cast"
+#pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
+#if __GNUC__ >= 10
 #pragma GCC diagnostic ignored "-Wvolatile"
+#endif
 #endif
 
 #include "stm32f0xx.h"
