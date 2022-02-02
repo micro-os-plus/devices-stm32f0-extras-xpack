@@ -53,7 +53,7 @@ if(NOT TARGET micro-os-plus-devices-stm32f0-extras-interface)
   # Hopefully the file names follow the symbol definitions.
   string(TOLOWER ${xpack_device_compile_definition} device_name)
 
-  # ---------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
   set(source_files
     ${xpack_current_folder}/src/vectors/vectors_${device_name}.c
@@ -93,7 +93,7 @@ if(NOT TARGET micro-os-plus-devices-stm32f0-extras-interface)
       micro-os-plus::architecture-cortexm
   )
 
-  # ---------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
   # Aliases.
 
   add_library(micro-os-plus::devices-stm32f0-extras ALIAS micro-os-plus-devices-stm32f0-extras-interface)
