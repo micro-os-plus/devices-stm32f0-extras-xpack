@@ -52,6 +52,8 @@ cd my-project
 xpm init # Unless a package.json is already present
 
 xpm install @micro-os-plus/devices-stm32f0-extras@latest
+
+ls -l xpacks/micro-os-plus-devices-stm32f0-extras
 ```
 
 ### Git submodule
