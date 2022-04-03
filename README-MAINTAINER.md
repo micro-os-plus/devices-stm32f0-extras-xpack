@@ -128,7 +128,7 @@ When the release is considered stable, promote it as `latest`:
 
 - `npm dist-tag ls @micro-os-plus/devices-stm32f0-extras`
 - `npm dist-tag add @micro-os-plus/devices-stm32f0-extras@2.1.0 latest`
-- `npm dist-tag ls @@micro-os-plus/devices-stm32f0-extras`
+- `npm dist-tag ls @micro-os-plus/devices-stm32f0-extras`
 
 ## Announce to the community
 
