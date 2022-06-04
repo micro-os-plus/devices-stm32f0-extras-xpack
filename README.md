@@ -95,15 +95,19 @@ The STM32F0 vectors definitions are fully functional.
 
 To include this package in a project, consider the following details.
 
-#### Source folders
-
-- `src`
-
 #### Include folders
+
+The following folders should be passed to the compiler during the build:
 
 - `include`
 
 TODO: list the available headers
+
+#### Source files
+
+The source files to be added to user projects are:
+
+TODO
 
 #### Preprocessor definitions
 
